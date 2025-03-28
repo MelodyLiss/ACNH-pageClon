@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1052" height="261" viewBox="0 0 1052 261" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="facts-ribbon-c" x1="0%" x2="97.142%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#DE1723"/>
+      <stop offset="53.001%" stop-color="#F83A3A"/>
+      <stop offset="100%" stop-color="#DE1723"/>
+    </linearGradient>
+    <path id="facts-ribbon-a" d="M17.2786469,248.123607 C16.9025422,249.15991 17.4856034,250 18.6028308,250 L1041.7056,250 L993.831178,125.811238 L1042.0538,3.61267015 L0,0 L61.6693811,125.811238 L17.2786469,248.123607 Z"/>
+    <filter id="facts-ribbon-b" width="102%" height="108.8%" x="-1%" y="-2.2%" filterUnits="objectBoundingBox">
+      <feOffset dy="6" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.241423234 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(5)">
+    <use fill="#000" filter="url(#facts-ribbon-b)" xlink:href="#facts-ribbon-a"/>
+    <use fill="url(#facts-ribbon-c)" xlink:href="#facts-ribbon-a"/>
+  </g>
+</svg>
