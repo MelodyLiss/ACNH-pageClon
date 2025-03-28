@@ -1,12 +1,17 @@
 import { useState } from 'react'
+import { NavLogin } from './assets/components/NavLogin'
 
+
+import './App.css'
 
 
 const App = () => {
 
 
   return (
-    <h1>Hello Animal Crossing 🧡</h1>
+  
+        <NavLogin />
+
   )
 }
 
