@@ -1,7 +1,7 @@
-import banner_verano from '../img/hero-bg.jpg'
-import logo_ACNH from '../img/logo.png'
-import tablero from '../img/tablero.png'
-import canelita1 from '../img/canelita1.png'
+import banner_verano from '../../img/hero-bg.jpg'
+import logo_ACNH from '../../img/logo.png'
+import tablero from '../../img/tablero.png'
+import canelita1 from '../../img/canelita1.png'
 
 export const BannerHeader = () => {
     return (

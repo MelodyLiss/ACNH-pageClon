@@ -1,4 +1,4 @@
-import logoNintendo from '../img/nintendo-racetrack.svg'
+import logoNintendo from '../../img/nintendo-racetrack.svg'
 
 export const NavLogin = () => {
     return (
@@ -13,7 +13,7 @@ export const NavLogin = () => {
                 <li>
                     <a className="flex items-center gap-2" href="#">
                         <i className="fa-solid fa-user text-2xl "></i>
-                        <p className="text-xs text-center text-xl  md:text-base">Iniciar sesión/Crear cuenta</p>
+                        <p className=" text-center text-xl  md:text-base">Iniciar sesión/Crear cuenta</p>
                     </a>
                 </li>
             </ul>
