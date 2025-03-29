@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Header } from './assets/components/sections/Header'
 import './App.css'
+import { Header } from './assets/components/sections/Header'
 
 
 const App = () => {
@@ -9,6 +9,7 @@ const App = () => {
   return (
     <div>
         <Header/>
+        
     </div>
   )
 }
