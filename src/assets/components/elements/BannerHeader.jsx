@@ -27,7 +27,7 @@ export const BannerHeader = () => {
 
                         <div className="relative top-55 sm:top-10 sm:z-20">
                             <img src={tablero} alt="tablero" className="mb-4 w-95 sm:w-130 lg:w-150" />
-                            <p className="text-white [text-shadow:_0_2px_8px_rgb(0_0_0_/_0.8)] text-center absolute top-6 left-12 w-72 flex  text-lg sm:text-xl sm:top-15 sm:left-25 lg:w-120 lg:text-2xl lg:top-20 lg:left-15">Haz amistad con los adorables habitantes animales y diviértete creando tu propio mundo en la serie de Animal Crossing</p>
+                            <p className="text-white [text-shadow:_0_4px_4px_rgb(100_50_20_/_0.8)] text-center absolute top-6 left-12 w-72 flex  text-lg sm:text-xl sm:top-15 sm:left-25 lg:w-120 lg:text-2xl lg:top-20 lg:left-15">Haz amistad con los adorables habitantes animales y diviértete creando tu propio mundo en la serie de Animal Crossing</p>
                         </div>
 
                     </div>
