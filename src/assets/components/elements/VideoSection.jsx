@@ -8,10 +8,10 @@ export const VideoSection = () => {
         <section>
             <div className="w-full max-w-4xl mx-auto p-4 ">
                 <div className="w-full relative mb-5">
-                    <CornerTriangle position="top-left" className="w-20" style={createRayasStyle('#fef9c2','#fdc700',-135,30)} />
-                    <CornerTriangle position="top-right" className="w-20" style={createRayasStyle('#fef9c2','#fdc700',135,30)} />
-                    <CornerTriangle position="bottom-left" className="w-20" style={createRayasStyle('#fef9c2','#fdc700',-135,30)} />
-                    <CornerTriangle position="bottom-right" className="w-20" style={createRayasStyle('#fef9c2','#fdc700',135,30)} />
+                    <CornerTriangle position="top-left" className="w-16" style={createRayasStyle('#fef9c2','#fdc700',-135,30)} />
+                    <CornerTriangle position="top-right" className="w-16" style={createRayasStyle('#fef9c2','#fdc700',135,30)} />
+                    <CornerTriangle position="bottom-left" className="w-16" style={createRayasStyle('#fef9c2','#fdc700',-135,30)} />
+                    <CornerTriangle position="bottom-right" className="w-16" style={createRayasStyle('#fef9c2','#fdc700',135,30)} />
                     <video
                         className="w-full rounded-lg shadow-lg border-10 border-white"
                         muted
