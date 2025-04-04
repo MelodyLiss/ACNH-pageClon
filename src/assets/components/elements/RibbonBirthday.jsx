@@ -6,9 +6,9 @@ import regalo from '../../img/birthday-giftbox.png'
 
 export const RibbonBirthday = () => {
     return (
-        <section className="relative top-[-30px] sm:top-[-60px] z-20">
+        <section className="relative top-[-30px] sm:top-[-40px] z-20">
             {/* contenedor de la informacion y la imagen */}
-            <div className="flex flex-col sm:flex-row items-center sm:justify-center md:justify-evenly w-2/3 mx-auto relative z-10">
+            <div className="flex flex-col sm:flex-row items-center sm:justify-center md:justify-evenly 2xl:justify-center w-2/3 mx-auto relative z-10">
                 {/* informacion del villager */}
                 <div className="text-center pt-6">
                     <p className="text-amber-200 [text-shadow:_0_4px_4px_rgb(100_50_20_/_0.8)] text-xl md:text-2xl  sm:text-xl font-bold mb-4">Hoy es el cumpleaños de</p>
@@ -38,7 +38,7 @@ export const RibbonBirthday = () => {
             </div>
 
             {/* contenedor de la cinta */}
-            <section className="ribbon bg-red-500 w-[90%] sm:w-full lg:w-250 xl:w-300 mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[100%] sm:h-[88%] flex items-center justify-between ">
+            <section className="ribbon bg-red-500 w-[90%] sm:w-full lg:w-250 xl:w-300 mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[100%] sm:h-[95%] flex items-center justify-between ">
                 {/* Aquí puedes agregar el contenido de la cinta */}
             </section>
         </section>
