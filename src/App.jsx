@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import { Header } from './assets/components/sections/Header'
-import { ACNHSecction } from './assets/components/sections/ACNHSecction'
-
+import { ACNHSection } from './assets/components/sections/ACNHSection'
+import { PocketCampSection } from './assets/components/sections/PocketCampSection'
 const App = () => {
 
 
@@ -10,7 +10,8 @@ const App = () => {
     <div>
         <Header/>
         <main>
-          <ACNHSecction/>
+          <ACNHSection/>
+          <PocketCampSection/>
         </main>
         
     </div>
