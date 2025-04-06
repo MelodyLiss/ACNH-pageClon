@@ -5,7 +5,7 @@ import { createRayasStyle } from "../../utils/createRayasStyle"
 
 export const DualCard = () => {
     return (
-        <section className="w-2/3 max-w-4xl mx-auto p-8 flex flex-col sm:flex-row sm:gap-4 justify-center items-center rounded-xl relative">
+        <section className="w-full sm:w-2/3 max-w-4xl mx-auto p-8 flex flex-col sm:flex-row sm:gap-4 justify-center items-center rounded-xl relative">
             {/* Fondo con rayas */}
             <div className="absolute inset-0 rounded-xl" style={createRayasStyle('#7dc49b','#89cba4',135,30)}></div>
 
