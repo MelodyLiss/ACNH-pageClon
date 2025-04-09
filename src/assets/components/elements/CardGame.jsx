@@ -1,7 +1,7 @@
 export const CardGame = ({
     gameImage,
-    gameType ,
-    gameTitle ,
+    gameType,
+    gameTitle,
     gameDescription,
     gameIcon,
     bgColor = "bg-red-600",
@@ -9,6 +9,13 @@ export const CardGame = ({
     direction = "flex-row",
     scaleImage = "scale-150",
 }) => {
+    const directionStyles = {
+        "flex-row": "text-end pr-4 pl-8 border-l-0",
+        "flex-row-reverse": "text-start pl-4 pr-8 border-r-0"
+    };
+
+    const currentStyle = directionStyles[direction];
+
     return (
         <div className={`flex items-center justify-center m-2 gap-0 ${direction} relative`}>
             <div className={`w-[220px] h-[200px] flex justify-center overflow-hidden border-4 border-black ${direction === "flex-row" ? "border-r-0" : "border-l-0"} relative`}>
@@ -19,7 +26,7 @@ export const CardGame = ({
                 <img src={gameIcon} alt="game_icon" className="w-12 h-12 object-contain" />
             </div>
 
-            <div className={`${bgColor} flex flex-col items-center text-end justify-center w-[220px] h-[200px] py-8 pr-4 pl-8 border-4 border-black ${direction === "flex-row" ? "border-l-0" : "border-r-0"} relative`}>
+            <div className={`${bgColor} flex flex-col items-center justify-center w-[220px] h-[200px] py-8 ${currentStyle} border-4 border-black relative`}>
                 <p className="uppercase font-bold text-white text-sm">{gameType}</p>
                 <h4 className="text-xl font-bold text-white text-end">{gameTitle}</h4>
                 <p className="text-sm text-white">{gameDescription}</p>
