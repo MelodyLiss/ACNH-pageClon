@@ -20,13 +20,13 @@ export const CanelitaSection = () => {
         }}>
 
 
-            <div className="relative z-10">
+            <div className="relative z-10 hidden lg:block">
                 <img src={canelita} alt="canelita" className="w-full scale-125" />
             </div>
 
             <div className="flex flex-col items-center justify-center relative z-10">
                 <h1 className="text-5xl font-bold text-center p-6 text-yellow-900">Canela y sus amigos en Play Nintendo</h1>
-                <div className="grid grid-cols-2 gap-2 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full">
                     <CardGame
                         gameImage={game_1}
                         gameIcon={icon_game_1}
