@@ -1,4 +1,4 @@
-import { AmiiboCard } from "../elements/amiiboCard"
+import { AmiiboCard } from "../elements/AmiiboCard"
 import { ButtonBasic } from "../ui/ButtonBasic"
 import bg_green from "../../img/bg-green.png"
 import pueblo from "../../img/pueblo.png"

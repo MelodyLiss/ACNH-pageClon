@@ -1,7 +1,7 @@
 import { ButtonBasic } from "../ui/ButtonBasic"
 import { CornerTriangle } from "../ui/CornerTriangle"
 import { createRayasStyle } from "../../utils/createRayasStyle"
-import video from "../../video/video_ACNH.mp4z"
+import video from "../../video/video_ACNH.mp4"
 
 export const VideoSection = () => {
     return (
