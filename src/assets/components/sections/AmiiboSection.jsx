@@ -32,7 +32,7 @@ export const AmiiboSection = () => {
 
                     <ButtonBasic
                         Text="Ver el catálogo de figuras amiibo"
-                        width="w-90"
+                        width="w-100"
                         padding="py-4 px-4"
                         bgColor="bg-yellow-500"
                         hoverBgColor="hover:bg-amber-200"
