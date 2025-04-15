@@ -1,7 +1,7 @@
 import { ButtonBasic } from "../ui/ButtonBasic"
 import { CornerTriangle } from "../ui/CornerTriangle"
 import { createRayasStyle } from "../../utils/createRayasStyle"
-import video from "../../video/Que_es_Animal_Crossing_ New Horizons.mp4"
+import video from "../../video/video_ACNH.mp4z"
 
 export const VideoSection = () => {
     return (
