@@ -11,16 +11,17 @@ import { LineFooter } from './assets/components/ui/LineFooter'
 const App = () => {
   return (
     <div>
-        <Header/>
-        <main >
-          <ACNHSection/>
-          <PocketCampSection/>
-          <AmiiboSection/>
-          <CanelitaSection/>
-          <LineFooter/>
-          <Footer/>
-        </main>
-        
+      <Header />
+      <main >
+        <ACNHSection />
+        <PocketCampSection />
+        <AmiiboSection />
+        <CanelitaSection />
+        <LineFooter />
+      </main>
+      <Footer />
+
+
     </div>
   )
 }

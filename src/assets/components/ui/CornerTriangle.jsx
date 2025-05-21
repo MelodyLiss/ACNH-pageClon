@@ -9,7 +9,7 @@ export const CornerTriangle = ({ position = "top-left", className = "w-20", styl
     }
 
     return (
-        <div className={`absolute z-10 ${positions[position]}`}>
+        <div className={`absolute z-20 ${positions[position]}`}>
             <div className={`triangle ${className}`} style={style}></div>
         </div>
     )

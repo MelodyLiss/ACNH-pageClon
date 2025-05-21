@@ -1,33 +1,87 @@
+import { useState, useRef, useEffect } from "react"
 import { ButtonBasic } from "../ui/ButtonBasic"
 import { CornerTriangle } from "../ui/CornerTriangle"
 import { createRayasStyle } from "../../utils/createRayasStyle"
 import video from "../../video/video_ACNH.mp4"
+import videoImage from "../../img/bg-acnh.jpg"
 
 export const VideoSection = () => {
+    const [isPlaying, setIsPlaying] = useState(false)
+    const [hasStarted, setHasStarted] = useState(false)
+    const videoRef = useRef(null)
+
+    const togglePlayPause = () => {
+        if (videoRef.current) {
+            if (!hasStarted) {
+                setHasStarted(true)
+            }
+
+            if (isPlaying) {
+                videoRef.current.pause()
+            } else {
+                videoRef.current.play()
+            }
+        }
+    }
+
+    useEffect(() => {
+        const video = videoRef.current
+        if (!video) return
+
+        const handlePlay = () => setIsPlaying(true)
+        const handlePause = () => setIsPlaying(false)
+
+        video.addEventListener("play", handlePlay)
+        video.addEventListener("pause", handlePause)
+
+        return () => {
+            video.removeEventListener("play", handlePlay)
+            video.removeEventListener("pause", handlePause)
+        }
+    }, [])
+
+    const shouldShowPlayButton = !hasStarted || (!isPlaying && hasStarted)
+
     return (
         <section>
-            <div className="w-full max-w-4xl mx-auto p-4 ">
+            <div className="w-full max-w-4xl mx-auto p-4">
                 <div className="w-full relative mb-5">
-                    <CornerTriangle position="top-left" className="w-16" style={createRayasStyle('#fef9c2','#fdc700',-135,30)} />
-                    <CornerTriangle position="top-right" className="w-16" style={createRayasStyle('#fef9c2','#fdc700',135,30)} />
-                    <CornerTriangle position="bottom-left" className="w-16" style={createRayasStyle('#fef9c2','#fdc700',-135,30)} />
-                    <CornerTriangle position="bottom-right" className="w-16" style={createRayasStyle('#fef9c2','#fdc700',135,30)} />
+                    <CornerTriangle position="top-left" className="w-16" style={createRayasStyle('#fef9c2', '#fdc700', -135, 30)} />
+                    <CornerTriangle position="top-right" className="w-16" style={createRayasStyle('#fef9c2', '#fdc700', 225, 30)} />
+                    <CornerTriangle position="bottom-left" className="w-16" style={createRayasStyle('#fef9c2', '#fdc700', 225, 30)} />
+                    <CornerTriangle position="bottom-right" className="w-16" style={createRayasStyle('#fef9c2', '#fdc700', -135, 30)} />
+
+                    {/* Imagen inicial */}
+                    {!hasStarted && (
+                        <img
+                            src={videoImage}
+                            alt="video"
+                            className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg border-10 border-white z-10"
+                        />
+                    )}
+
                     <video
                         className="w-full rounded-lg shadow-lg border-10 border-white"
-                        muted
                         loop
                         playsInline
+                        ref={videoRef}
+                        controls={hasStarted}
                     >
                         <source src={video} type="video/mp4" />
-                        Tu navegador no soporta el elemento de video.
+                        Tu navegador no soporta el video.
                     </video>
 
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <button
-                            className="bg-black/50 text-white p-4  rounded-full hover:bg-black/70 transition-all duration-300 flex items-center justify-center">
-                            <i className="fa-solid fa-play text-4xl"></i>
-                        </button>
-                    </div>
+                    {/* Botón de Play visible si nunca ha comenzado o está en pausa */}
+                    {shouldShowPlayButton && (
+                        <div className="absolute inset-0 flex items-center justify-center z-20">
+                            <button
+                                className="bg-black/50 text-white p-4 rounded-full hover:bg-black/70 transition-all duration-300 flex items-center justify-center"
+                                onClick={togglePlayPause}
+                            >
+                                <i className="fa-solid fa-play text-4xl"></i>
+                            </button>
+                        </div>
+                    )}
                 </div>
 
                 <div className="text-center my-4">
@@ -35,9 +89,7 @@ export const VideoSection = () => {
                     <p className="text-yellow-900 text-2xl">Mira el tráiler para el juego Animal Crossing: New Horizons</p>
                 </div>
 
-                <ButtonBasic
-                    Text="Visita el sitio oficial"
-                />
+                <ButtonBasic Text="Visita el sitio oficial" />
             </div>
         </section>
     )
