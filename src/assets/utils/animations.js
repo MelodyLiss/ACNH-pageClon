@@ -10,10 +10,14 @@ export const animations = () => {
     const presets = {
         bounce: {
             from: { scale: 0.9, opacity: 0 },
-            to: { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)", clearProps: "all" }
+            to: { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)", clearProps: "all" }
         },
         slideUp: {
-            from: { y: 20, opacity: 0 },
+            from: { y: 50, opacity: 0 }, 
+            to: { y: 0, opacity: 1, duration: 0.3, ease: "power2.out", clearProps: "all" }
+        },
+        slideDown: {
+            from: { y: -120, opacity: 0 },
             to: { y: 0, opacity: 1, duration: 0.2, ease: "power2.out", clearProps: "all" }
         },
         slideLeft: {
@@ -23,6 +27,10 @@ export const animations = () => {
         fadein: {
             from: { opacity: 0 },
             to: { opacity: 1, duration: 0.5, ease: "power2.out", clearProps: "all" }
+        },
+        fadeinBG: {
+            from: { opacity: 0, scale: 0.5 },
+            to: { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out", clearProps: "all" }
         }
     };
 
@@ -31,9 +39,10 @@ export const animations = () => {
         return gsap.timeline({
             scrollTrigger: {
                 trigger: triggerElement,
-                start: "top 80%",
+                start: "top 50%",
+                end: "top 20%",
                 toggleActions: "play none none none",
-                once: true
+                once: true,
             }
         });
     };
@@ -52,19 +61,20 @@ export const animations = () => {
     };
 
     // Animación individual
-    const animateBasic = (timeline, element, presetName) => {
+    const animateBasic = (timeline, element, presetName, position = ">") => {
         const preset = presets[presetName] || presets.slideUp;
         if (!element || !preset) return;
 
-        timeline.fromTo(element, preset.from, preset.to);
+        timeline.fromTo(element, preset.from, preset.to, position);
     };
+
 
     // Limpiar 
     const cleanAnimate = () => {
         timelineRef.current?.kill();
         ScrollTrigger.getAll().forEach((st) => st.kill());
         timelineRef.current = null;
-        
+
     };
 
     return {
@@ -74,6 +84,6 @@ export const animations = () => {
         animateBasic,
         cleanAnimate,
         timelineRef,
-        
+
     };
 };

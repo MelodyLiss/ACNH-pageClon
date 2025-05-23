@@ -10,7 +10,7 @@ import { animations } from "../../utils/animations"
 export const VideoSection = () => {
     const [isPlaying, setIsPlaying] = useState(false)
     const [hasStarted, setHasStarted] = useState(false)
-    const section1ref = useRef(null)
+    const section2ref = useRef(null)
     const ref1 = useRef(null)
     const ref2 = useRef(null)
     const ref3 = useRef(null)
@@ -26,7 +26,7 @@ export const VideoSection = () => {
     } = animations();
 
     useLayoutEffect(() => {
-        const timeline = createScrollTimeline(section1ref.current);
+        const timeline = createScrollTimeline(section2ref.current);
 
         
         animateParallel(timeline, [ref1.current, ref2.current], ["bounce","bounce"]);
@@ -75,7 +75,7 @@ export const VideoSection = () => {
     const shouldShowPlayButton = !hasStarted || (!isPlaying && hasStarted)
 
     return (
-        <section ref={section1ref}>
+        <section >
             <div className="w-full max-w-4xl mx-auto p-4">
                 <div className="w-full relative mb-5"
                     ref={ref1}>
@@ -87,7 +87,7 @@ export const VideoSection = () => {
                     {/* Imagen inicial */}
                     {!hasStarted && (
                         <img
-
+                            ref={section2ref}
                             src={videoImage}
                             alt="video"
                             className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg border-10 border-white z-10"
