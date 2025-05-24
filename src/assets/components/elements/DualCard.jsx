@@ -41,7 +41,6 @@ export const DualCard = () => {
                 backgroundImage: `url(${patron})`,
                 backgroundSize: '50px',
                 backgroundRepeat: 'repeat',
-               
             }}>
 
                 <div className="w-full lg:w-1/2">

@@ -27,7 +27,7 @@ export const RibbonBirthday = () => {
 
 
 
-        animateBasic(timeline, imageRef.current, "bounceBig")
+        animateBasic(timeline, imageRef.current, "bounceBig","<+=0.3"); 
         animateBasic(timeline, confettiRef.current, "bounceBig")
 
     }, [])
@@ -55,8 +55,8 @@ export const RibbonBirthday = () => {
                     </div>
                 </div>
 
-                <div className="hidden sm:flex flex-col items-center justify-center w-[150px] h-[150px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] bg-red-600 rounded-full p-18 hover:bg-red-700 transition-all duration-300 cursor-pointer  ">
-                    <div ref={giftRef} className="flex flex-col items-center justify-center h-full ">
+                <div ref={giftRef} className="hidden sm:flex flex-col items-center justify-center w-[150px] h-[150px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] bg-red-600 rounded-full p-18 hover:bg-red-700 transition-all duration-300 cursor-pointer  ">
+                    <div  className="flex flex-col items-center justify-center h-full ">
                         <img src={regalo} alt="regalo" className=" sm:w-18 " />
                         <p className="text-amber-200 [text-shadow:_0_4px_4px_rgb(100_50_20_/_0.8)] font-bold text-sm sm:text-[12px] md:text-base lg:text-lg text-center w-[85%]">¡Celebra su cumpleaños!</p>
                     </div>

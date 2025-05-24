@@ -39,7 +39,15 @@ export const animations = () => {
         fadeinBG: {
             from: { opacity: 0, scale: 0.5 },
             to: { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out", clearProps: "all" }
+        },
+        floatLoop: {
+            y: -60,
+            duration: 6,
+            repeat: -1,             // infinito
+            yoyo: true,             // sube y baja
+            ease: "sine.inOut"      // movimiento suave
         }
+
     };
 
     // Crear timeline con ScrollTrigger
@@ -76,6 +84,14 @@ export const animations = () => {
         timeline.fromTo(element, preset.from, preset.to, position);
     };
 
+    // animaciones infinitas
+    const animateLooping = (element, presetName) => {
+        const preset = presets[presetName];
+        if (!element || !preset) return;
+
+        gsap.to(element, preset);
+    };
+
 
     // Limpiar 
     const cleanAnimate = () => {
@@ -90,6 +106,7 @@ export const animations = () => {
         createScrollTimeline,
         animateParallel,
         animateBasic,
+        animateLooping,
         cleanAnimate,
         timelineRef,
 
