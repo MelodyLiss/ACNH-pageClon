@@ -9,7 +9,7 @@ export const animations = () => {
 
     const presets = {
         bounce: {
-            from: { scale: 0.9, opacity: 0 },
+            from: { scale: 0.5, opacity: 0 },
             to: { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)", clearProps: "all" }
         },
         slideUp: {
