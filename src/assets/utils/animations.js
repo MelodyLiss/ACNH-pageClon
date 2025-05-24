@@ -12,8 +12,12 @@ export const animations = () => {
             from: { scale: 0.5, opacity: 0 },
             to: { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)", clearProps: "all" }
         },
+        bounceBig: {
+            from: { scale: 0.2, opacity: 0 },
+            to: { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)", clearProps: "all" }
+        },
         slideUp: {
-            from: { y: 50, opacity: 0 }, 
+            from: { y: 50, opacity: 0 },
             to: { y: 0, opacity: 1, duration: 0.3, ease: "power2.out", clearProps: "all" }
         },
         slideDown: {
@@ -22,6 +26,10 @@ export const animations = () => {
         },
         slideLeft: {
             from: { x: 50, opacity: 0 },
+            to: { x: 0, opacity: 1, duration: 0.5, ease: "power2.out", clearProps: "all" }
+        },
+        slideRight: {
+            from: { x: -50, opacity: 0 },
             to: { x: 0, opacity: 1, duration: 0.5, ease: "power2.out", clearProps: "all" }
         },
         fadein: {
@@ -39,7 +47,7 @@ export const animations = () => {
         return gsap.timeline({
             scrollTrigger: {
                 trigger: triggerElement,
-                start: "top 50%",
+                start: "top 80%",
                 end: "top 20%",
                 toggleActions: "play none none none",
                 once: true,
