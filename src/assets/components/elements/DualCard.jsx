@@ -1,6 +1,7 @@
 import { useRef, useLayoutEffect, useEffect } from "react"
 import pocketCampLogo from "../../img/pocket-camp-logo.png"
 import pocketCampArt from "../../img/pocket-camp-art.png"
+import patron from "../../img/tree_dots.png"
 import { ButtonBasic } from "../ui/ButtonBasic"
 import { createRayasStyle } from "../../utils/createRayasStyle"
 import { animations } from "../../utils/animations"
@@ -29,14 +30,19 @@ export const DualCard = () => {
 
     }, [])
 
-
     return (
         <section ref={sectionref} className="w-full sm:w-2/3 max-w-4xl mx-auto p-8 flex flex-col sm:flex-row sm:gap-4 justify-center items-center rounded-xl relative">
             {/* Fondo con rayas */}
             <div className="absolute inset-0 rounded-xl" style={createRayasStyle('#7dc49b', '#89cba4', 135, 30)}></div>
 
             {/* Contenido principal */}
-            <div className=" p-4 flex flex-col lg:flex-row sm:gap-4 justify-center items-center bg-yellow-200 rounded-xl relative z-10">
+            <div className=" p-8 flex flex-col lg:flex-row sm:gap-4 justify-center items-center bg-yellow-200 rounded-xl relative z-10" 
+            style={{
+                backgroundImage: `url(${patron})`,
+                backgroundSize: '50px',
+                backgroundRepeat: 'repeat',
+               
+            }}>
 
                 <div className="w-full lg:w-1/2">
                     <div className="flex flex-col justify-center items-center relative">
@@ -48,7 +54,7 @@ export const DualCard = () => {
                 <div className="w-full lg:w-1/2 text-center">
                     <h3 ref={ref1} className="text-3xl font-bold text-green-900 pb-4">¡Crea una parcela que se ajuste a tu estilo!</h3>
 
-                    <p ref={ref2} className="pb-4 text-lg">
+                    <p ref={ref2} className="pb-4 text-base ">
                         Hamacas, tiendas de campaña, chimeneas, un sofá de peluche... ¡Deja volar tu imaginación con una variedad de ideas de decoración en el juego móvil Animal Crossing: Pocket Camp! ¡Crea una moderna cafetería o coloca algunos micrófonos y guitarras para disfrutar un festival de música al aire libre! ¡Incluso puedes fabricar una piscina o llenar el cielo de brillantes fuegos artificiales!
                     </p>
 
