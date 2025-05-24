@@ -47,7 +47,7 @@ export const animations = () => {
         return gsap.timeline({
             scrollTrigger: {
                 trigger: triggerElement,
-                start: "top 80%",
+                start: "top 50%",
                 end: "top 20%",
                 toggleActions: "play none none none",
                 once: true,
