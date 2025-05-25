@@ -40,6 +40,14 @@ export const animations = () => {
             from: { opacity: 0, scale: 0.5 },
             to: { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out", clearProps: "all" }
         },
+        exitLeft: {
+            from: { x: 0, opacity: 1 },
+            to: { x: -300, opacity: 0, duration: 0.5, ease: "power2.inOut", clearProps: "all" }
+        },
+        enterRight: {
+            from: { x: 300, opacity: 0 },
+            to: { x: 0, opacity: 1, duration: 0.5, ease: "power2.out", clearProps: "all" }
+        },
         floatLoop: {
             y: -60,
             duration: 6,
@@ -92,6 +100,18 @@ export const animations = () => {
         gsap.to(element, preset);
     };
 
+    const animateSwitch = (timeline, oldEl, newEl, exitPreset = "exitLeft", enterPreset = "enterRight") => {
+        const exit = presets[exitPreset];
+        const enter = presets[enterPreset];
+
+        if (oldEl && exit) {
+            timeline.fromTo(oldEl, exit.from, exit.to, 0);
+        }
+        if (newEl && enter) {
+            timeline.fromTo(newEl, enter.from, enter.to, ">"); 
+        }
+    };
+
 
     // Limpiar 
     const cleanAnimate = () => {
@@ -107,6 +127,7 @@ export const animations = () => {
         animateParallel,
         animateBasic,
         animateLooping,
+        animateSwitch,
         cleanAnimate,
         timelineRef,
 
