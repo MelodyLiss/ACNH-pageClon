@@ -9,7 +9,7 @@ export const solicitudApi = () => {
         const fechas = [];
         const hoy = new Date();
 
-        for (let i = 0; i <= dias; i++) { 
+        for (let i = 0; i <= dias; i++) {
             const fecha = new Date(hoy);
             fecha.setDate(hoy.getDate() - i);
 
@@ -53,14 +53,14 @@ export const solicitudApi = () => {
         const data = await apiFetch();
         const festivos = filtrarFestivos(data, fechas);
 
-        // Ordenar según el orden de fechas (más antiguo a más reciente)
+        // Ordenar según el orden de fechas (más reciente primero)
         festivos.sort((a, b) => {
             const fechaA = fechas.findIndex(f => parseInt(a.birthday_day) === f.dia && a.birthday_month === f.mes);
             const fechaB = fechas.findIndex(f => parseInt(b.birthday_day) === f.dia && b.birthday_month === f.mes);
             return fechaA - fechaB;
         });
 
-        return festivos;
+        return { festivos, fechas }; 
     };
 
     return {
