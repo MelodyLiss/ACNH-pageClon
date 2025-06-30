@@ -27,7 +27,7 @@ export const solicitudApi = () => {
             const res = await fetch("https://api.nookipedia.com/villagers", {
                 method: "GET",
                 headers: {
-                    "X-API-KEY": "90aa9c45-87fc-4094-97fe-4788105d44dc",
+                    "X-API-KEY": import.meta.env.VITE_NOOKI_API_KEY,
                     "Accept": "application/json"
                 }
             });
